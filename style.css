@@ -1,0 +1,353 @@
+@charset "UTF-8";
+/*
+Theme Name: My THEME
+Author: PICNIC
+Description: this is my original theme
+Version: 1.0
+*/
+
+body {
+    margin: 0;
+    font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', Sans-serif;
+    line-height: 1.5;
+}
+
+/*---------- 基本構造 ---------*/
+@media (min-width: 1040px) {
+    /* 全体の横幅 */
+    .container, .header-inner, .footer-inner, .sub-header {
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+/* ヘッダーとフッターをバーの形にする設定 */
+header {
+    border-bottom: solid 1px #ddd;
+    background: #f6f6f6;
+}
+footer {
+    border-top: solid 1px #ddd;
+}
+/* ボックスの上下の間隔 */
+.sub-header {
+    padding-top: 5px;
+}
+.contents {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.sub {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+footer {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+@media (max-width: 599px) {
+    .contents {
+        padding-top: 10px;
+    }
+}
+
+/* ボックスの左右の余白 */
+header, footer, .container, .sub-header {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/*---------- ヘッダー ----------*/
+/* サイト名 */
+.site h1 a {
+    display: inline-block;
+    padding: 10px;
+    background: #00a0e9;
+    color: #fff;
+    text-decoration: none;
+}
+.site h1 {
+    margin: 0;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 30px;
+}
+
+/*---------- フッター ---------*/
+/* コピーライト */
+.copyright p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+/*---------- 記事の概要 ----------*/
+/* 概要 */
+.gaiyou a {
+    display: block;
+    padding: 20px 0;
+    border-bottom: dotted 2px #ddd;
+    color: #000;
+    text-decoration: none;
+}
+.gaiyou a:hover {
+    background: #eee;
+}
+.gaiyou h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.gaiyou p {
+    margin: 0;
+    font-size: 14px;
+}
+/*---------- 記事 ----------*/
+/* 記事 */
+.kiji:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.kiji h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 36px;
+}
+.kiji p {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+/* 投稿日・更新日 */
+.kiji-date {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 12px;
+}
+@media (max-width: 599px) {
+    .kiji-date {
+        font-size: 11px;
+    }
+}
+
+/* タグ */
+.kiji-tag {
+    margin-bottom: 18px;
+}
+.kiji-tag ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.kiji-tag li a {
+    display: block;
+    margin-right: 5px;
+    margin-bottom: 2px;
+    padding: 3px 5px;
+    border-radius: 2px;
+    background: #75dbe7;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+}
+.kiji-tag li a:hover {
+    background: #94ecf6;
+}
+.kiji-tag ul:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.kiji-tag li {
+    float: left;
+    width: auto;
+}
+
+/* パンくずリスト */
+.bread ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.bread li a {
+    display: inline-block;
+    padding: 5px 5px;
+    color: #888;
+    font-size: 14px;
+    text-decoration: none;
+}
+.bread li a[href]:hover {
+    background: #eee;
+}
+.bread ol:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.bread li {
+    float: left;
+    width: auto;
+}
+.bread li:after {
+    content: '\003e';
+    margin-left: 2px;
+    margin-right: 2px;
+    color: #888;
+}
+.bread li:last-child:after {
+    content: none;
+}
+.bread i {
+    font-size: 14px;
+}
+.bread span {
+    display: inline-block;
+    text-indent: -9999px;
+}
+@media (max-width: 599px) {
+    .bread li:last-child {
+        text-indent: -9999px;
+    }
+}
+
+/*---------- サイドバー ----------*/
+/* メニュー */
+.mymenu h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: solid 2px #ddd;
+    color: #666;
+    font-size: 18px;
+}
+.mymenu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.mymenu li a {
+    display: block;
+    padding: 10px 5px;
+    color: #000;
+    font-size: 14px;
+    text-decoration: none;
+}
+.mymenu li a:hover {
+    background: #eee;
+}
+
+/*----------- 画像 ----------*/
+/* 画像のキャプション */
+.wp-caption-text {
+    margin: 0;
+    color: #666;
+    font-size: 10px;
+    text-align: center;
+}
+.wp-caption-text a {
+    color: #666;
+}
+/* 画像の配置 */
+.aligncenter {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (max-width: 599px) {
+    .alignleft, .alignright {
+        display: block;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media (min-width: 600px) {
+    .alignleft {
+        float: left;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        margin-right: 30px;
+    }
+    .alignright {
+        float: right;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        margin-left: 30px;
+    }
+}
+/* IE用の設定 */
+a img {
+    border: none;
+}
+/* 大きい画像用の設定 */
+img, .wp-caption {
+    max-width: 100%;
+    height: auto;
+}
+
+/* アイキャッチ画像 */
+.catch {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+/* youtubeのビデオ */
+.ytvideo {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.ytvideo iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/* ビデオ */
+.wp-video {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+@media (min-width: 768px){
+    /*コンテンツとサイドバーを横に並べる設定*/
+    .container:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .contents {
+        float: left;
+        width: 70%;
+    }
+    .sub {
+        float: left;
+        width: 30%;
+    }
+    /* コンテンツとサイドバーの間隔 */
+    .contents {
+        padding-right: 50px;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 599px) {
+    .kiji h1 {
+        font-size: 24px;
+    }
+    .kiji p {
+        font-size: 14px;
+    }
+}
