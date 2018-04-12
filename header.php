@@ -12,7 +12,17 @@
         <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>?ver=<?php echo date('U'); ?>">
 
 		<?php if( is_single() ): // 記事の個別ページ用のメタデータ ?>
-        <meta propaty="og:type" content="article">
+		<meta name="description" content="<?php echo wp_trim_words( $post->post_content, 100, '･･･' ); ?>">
+		<?php if( has_tag() ): ?>
+		<?php $tags = get_the_tags();
+		$kwds = array();
+		foreach($tags as $tag) {
+			$kwds[] = $tag->name;
+		} ?>
+		<meta name="keywords" content="<?php echo implode( ',', $kwds ); ?>">
+		<?php endif; ?>
+
+		<meta propaty="og:type" content="article">
         <meta propaty="og:title" content="<?php the_title(); ?>">
         <meta propaty="og:url" content="<?php the_permaling(); ?>">
         <meta propaty="og:description" content="<?php echo wp_trim_words( $post->post_content, 100, '･･･' ); ?>">
