@@ -11,18 +11,23 @@
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
         <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>?ver=<?php echo date('U'); ?>">
 
+		<?php if( is_single() ): // 記事の個別ページ用のメタデータ ?>
+        <meta propaty="og:type" content="article">
+        <meta propaty="og:title" content="<?php the_title(); ?>">
+        <meta propaty="og:url" content="<?php the_permaling(); ?>">
+        <meta propaty="og:description" content="<?php echo wp_trim_words( $post->post_content, 100, '･･･' ); ?>">
+
 		<?php if( has_post_thumbnail() ): ?>
 			<?php $postthumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' ); ?>
 			<meta propaty="og:image" content="<?php echo get_thumb[0]; ?>">
 		<?php else: ?>
 			<meta propaty="og:image" content="<?php echo get_template_directory_uri(); ?>">
 		<?php endif; ?>
-		<?php if( is_single() ): // 記事の個別ページ用のメタデータ ?>
-        <meta propaty="og:type" content="article">
-        <meta propaty="og:title" content="<?php the_title(); ?>">
-        <meta propaty="og:url" content="<?php the_permaling(); ?>">
-        <meta propaty="og:description" content="<?php echo wp_trim_words( $post->post_content, 100, '･･･' ); ?>">
         <?php endif; // 記事の個別ページ用のメタデータ[ここまで] ?>
+
+		<meta propaty="og:site_name" content="<?php bloginfo( 'name' ); ?>">
+		<meta propaty="og:locale" conten="ja_JP">
+
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>

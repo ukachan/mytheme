@@ -41,3 +41,6 @@ if ($cache_clear) {
 
 // アイキャッチ画像
 add_theme_support( 'post-thumbnails' );
+
+// 管理者上部メニュー非表示
+show_admin_bar( false ) ;
