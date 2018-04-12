@@ -11,7 +11,7 @@
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
         <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>?ver=<?php echo date('U'); ?>">
 
-		<?php if( has_post_thumbnail() ) ?>
+		<?php if( has_post_thumbnail() ): ?>
 			<?php $postthumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' ); ?>
 			<meta propaty="og:image" content="<?php echo get_thumb[0]; ?>">
 		<?php else: ?>
