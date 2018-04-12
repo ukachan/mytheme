@@ -12,36 +12,32 @@
         <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>?ver=<?php echo date('U'); ?>">
 
 		<?php if( is_single() ): // 記事の個別ページ用のメタデータ ?>
-		<meta name="description" content="<?php echo wp_trim_words( $post->post_content, 100, '･･･' ); ?>">
-		<?php if( has_tag() ): ?>
-		<?php $tags = get_the_tags();
-		$kwds = array();
-		foreach($tags as $tag) {
-			$kwds[] = $tag->name;
-		} ?>
-		<meta name="keywords" content="<?php echo implode( ',', $kwds ); ?>">
-		<?php endif; ?>
+			<meta name="description" content="<?php echo wp_trim_words( $post->post_content, 100, '･･･' ); ?>">
+			<?php if( has_tag() ): ?>
+				<?php $tags = get_the_tags();
+				$kwds = array();
+				foreach($tags as $tag) {
+					$kwds[] = $tag->name;
+				} ?>
+                <meta name="keywords" content="<?php echo implode( ',', $kwds ); ?>">
+                <meta propaty="og:type" content="article">
+                <meta propaty="og:title" content="<?php the_title(); ?>">
+                <meta propaty="og:url" content="<?php the_permalink(); ?>">
+                <meta propaty="og:description" content="<?php echo wp_trim_words( $post->post_content, 100, '･･･' ); ?>">
 
-		<meta propaty="og:type" content="article">
-        <meta propaty="og:title" content="<?php the_title(); ?>">
-        <meta propaty="og:url" content="<?php the_permaling(); ?>">
-        <meta propaty="og:description" content="<?php echo wp_trim_words( $post->post_content, 100, '･･･' ); ?>">
-
-		<?php if( has_post_thumbnail() ): ?>
-			<?php $postthumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' ); ?>
-			<meta propaty="og:image" content="<?php echo get_thumb[0]; ?>">
-		<?php else: ?>
-			<meta propaty="og:image" content="<?php echo get_template_directory_uri(); ?>">
-		<?php endif; ?>
-        <?php endif; // 記事の個別ページ用のメタデータ[ここまで] ?>
-
+                <?php if( has_post_thumbnail() ): ?>
+                    <?php $postthumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' ); ?>
+                    <meta propaty="og:image" content="<?php echo $postthumb[0]; ?>">
+                <?php else: ?>
+                    <meta propaty="og:image" content="<?php echo get_template_directory_uri(); ?>">
+                <?php endif; ?>
+            <?php endif; ?>
+		<?php endif; // 記事の個別ページ用のメタデータ[ここまで] ?>
 		<meta propaty="og:site_name" content="<?php bloginfo( 'name' ); ?>">
 		<meta propaty="og:locale" conten="ja_JP">
 
-		<!-- twitter card -->
 		<meta name="twitter:site" content="@ukkari_ukachan">
 		<meta name="twitter:card" content="summary_large_image">
-		<!-- twitter card ここまで -->
 
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
