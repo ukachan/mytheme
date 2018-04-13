@@ -129,6 +129,26 @@ header, footer, .container, .sub-header {
     }
 }
 
+/* 小見出し */
+.kiji h2 {
+	position: relative;
+	margin-top: 40px;
+	padding-left: 32px;
+	padding-bottom: 5px;
+	border-bottom: solid 2px #00a0e9;
+	font-size: 24px;
+	clear: both;
+}
+.kiji h2:before {
+	position: absolute;
+	left: 0px;
+	top: 3px;
+	content: '\f14a';
+	color: #00a0e9;
+	font-family: 'FontAwesome';
+	font-size: 28px;
+	line-height: 1;
+}
 /* タグ */
 .kiji-tag {
     margin-bottom: 18px;
@@ -243,6 +263,16 @@ header, footer, .container, .sub-header {
 .share-tw {background: #55acee; }
 .share-fb {background: #3b5998; }
 .share-gp {background: #dd4b39; }
+
+@media (max-width: 599px) {
+	.share span {
+		display: inline-block;
+		text-indent: -9999px;
+	}
+	.share li a {
+		padding: 8px 10px;
+	}
+}
 
 /*---------- サイドバー ----------*/
 /* メニュー */
