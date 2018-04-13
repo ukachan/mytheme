@@ -60,7 +60,7 @@
 				<i class="fa fa-facebook"></i>
 				Facebookで シェア
 			</a></li>
-			<li><a href="" class="share-gp">
+			<li><a href="https://plus.google.com/share?url=<?php echo urlencode( get_permalink() ); ?>" onclick="window.open(this.href, 'SNS', 'window=500, height=500, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="share-gp">
 				<i class="fa fa-google-plus"></i>
 				Google+ でシェア
 			</a></li>
