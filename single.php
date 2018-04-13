@@ -56,7 +56,7 @@
 				<i class="fa fa-twitter"></i>
 				Twitter でシェア
 			</a></li>
-			<li><a href="" class="share-fb">
+			<li><a href="http://www.facebook.com/share.php?u=<?php echo urlencode( get_permalink() ); ?>" onclick="window.open(this.href, 'SNS', 'width=500, height=500, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="share-fb">
 				<i class="fa fa-facebook"></i>
 				Facebookで シェア
 			</a></li>
