@@ -149,6 +149,27 @@ header, footer, .container, .sub-header {
 	font-size: 28px;
 	line-height: 1;
 }
+.kiji h3 {
+	margin-top: 25px;
+	padding-left: 10px;
+	border-left: solid 10px #a5e2fe;
+	font-size: 18px;
+	clear: both;
+}
+@media (max-width: 599px) {
+	.kiji h2 {
+		padding-left: 21px;
+		font-size: 18px;
+	}
+	.kiji h2:before {
+		font-size: 20px;
+	}
+	.kiji h3 {
+		padding-left: 6px;
+		font-size: 15px;
+	}
+}
+
 /* タグ */
 .kiji-tag {
     margin-bottom: 18px;
