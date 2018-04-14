@@ -51,6 +51,22 @@ footer {
     }
 }
 
+/* 番号なしリスト */
+.kiji-body ul {
+	list-style: none;
+}
+.kiji-body li {
+	position: relative;
+	padding-left: 20px;
+}
+.kiji-body li:before {
+	position: absolute;
+	left: 0;
+	top: 3px;
+	content: '\f069';
+	color: #aaa;
+	font-family: 'FontAwesome';
+	line-height: 1;
 /* ボックスの左右の余白 */
 header, footer, .container, .sub-header {
     padding-left: 10px;

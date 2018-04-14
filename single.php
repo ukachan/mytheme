@@ -21,7 +21,7 @@
     <?php if(have_posts()): while(have_posts()): the_post(); ?>
     <article <?php post_class( 'kiji' ); ?>>
     <h1><?php the_title(); ?></h1>
-
+	<div class="kiji-body">
     <div class="kiji-tag">
     <?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>
     </div>
@@ -49,7 +49,7 @@
     <?php endif; ?>
 
     <?php the_content(); ?>
-    
+	</div> 
 	<div class="share">
 		<ul>
 			<li><a href="http://twitter.com/intent/tweet?text=<?php echo urlencode( get_the_title() . ' - '. get_bloginfo( 'name' ) ); ?>&amp;url=<?php echo urlencode( get_permalink() ); ?>&amp;via=ebisucom" onclick="window.open(this.href, 'SNS', 'width=500, height=300, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="share-tw">
