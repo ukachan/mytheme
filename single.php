@@ -21,10 +21,9 @@
     <?php if(have_posts()): while(have_posts()): the_post(); ?>
     <article <?php post_class( 'kiji' ); ?>>
     <h1><?php the_title(); ?></h1>
-	<div class="kiji-body">
     <div class="kiji-tag">
     <?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>
-    </div>
+	</div>
 
     <div class="kiji-date">
     <i class="fas fa-edit"></i>
@@ -48,6 +47,7 @@
     </div>
     <?php endif; ?>
 
+	<div class="kiji-body">
     <?php the_content(); ?>
 	</div> 
 	<div class="share">

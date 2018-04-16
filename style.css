@@ -67,6 +67,7 @@ footer {
 	color: #aaa;
 	font-family: 'FontAwesome';
 	line-height: 1;
+}
 /* ボックスの左右の余白 */
 header, footer, .container, .sub-header {
     padding-left: 10px;
