@@ -59,6 +59,16 @@ function editor_setting($init) {
 			'title' => '注意書き',
 			'block' => 'div',
 			'classes' => 'attention'
+		),
+		array(
+			'title' => 'ハイライト',
+			'inline' => 'span',
+			'classes' => 'highlight'
+		),
+		array(
+			'title' => '強調',
+			'inline' => 'span',
+			'classes' => 'power'
 		)
 	);
 

@@ -218,6 +218,7 @@ blockquote:after {
 	}
 }
 
+/* 補足情報 */
 .point {
 	position: relative;
 	margin: 40px 0 30px;
@@ -257,6 +258,50 @@ blockquote:after {
 	font-family: Verdana, Helvetica, sans-serif;
 	line-height: 1;
 }
+
+/* 注意書き */
+.attention {
+    position: relative;
+    margin: 40px 0 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #ffefef;
+    font-size: 14px;
+    clear: both;
+}
+.attention:before {
+    position: absolute;
+    left: 20px;
+    top: -15px;
+    content: '\f071';
+    background: #fff;
+    color: #f00;
+    font-family: 'FontAwesome';
+    font-size: 26px;
+    line-height: 1;
+}
+
+/* ハイライト */
+.highlight {
+    background: #ff0;
+    padding: 0 3px;
+}
+/* 強調 */
+.power {
+    position: relative;
+    display: inline-block;
+}
+.power:after {
+    position: absolute;
+    width: 105%;
+    content: "";
+    height: 30%;
+    background: rgba(255,0,0,0.6);
+    left: 0;
+    bottom: 4px;
+    z-index: -1;
+}
+
 
 /* タグ */
 .kiji-tag {
