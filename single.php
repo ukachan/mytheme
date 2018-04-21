@@ -41,7 +41,7 @@
     <?php endif; ?>
     </div>
 
-    <?php if( has_post_thumbnail() ): ?>
+    <?php if( has_post_thumbnail() && $page==1 ): ?>
     <div class="catch">
     <?php the_post_thumbnail( 'large' ); ?>
     </div>
@@ -50,6 +50,12 @@
 	<div class="kiji-body">
     <?php the_content(); ?>
 	</div> 
+    <?php wp_link_pages( array(
+        'before' => '<div class="pagination"><ul><li>',
+        'separator' => '</li><li>',
+        'after' => '</li></ul></div>',
+        'pagelink' => '<span>%</span>'
+    ) ); ?>
 	<div class="share">
 		<ul>
 			<li><a href="http://twitter.com/intent/tweet?text=<?php echo urlencode( get_the_title() . ' - '. get_bloginfo( 'name' ) ); ?>&amp;url=<?php echo urlencode( get_permalink() ); ?>&amp;via=ebisucom" onclick="window.open(this.href, 'SNS', 'width=500, height=300, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="share-tw">

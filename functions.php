@@ -53,12 +53,14 @@ function editor_setting($init) {
 		array(
 			'title' => '補足情報',
 			'block' => 'div',
-			'classes' => 'point'
+			'classes' => 'point',
+			'wrapper' => true
 		),
 		array(
 			'title' => '注意書き',
 			'block' => 'div',
-			'classes' => 'attention'
+			'classes' => 'attention',
+			'wrapper' => true
 		),
 		array(
 			'title' => 'ハイライト',
@@ -83,3 +85,7 @@ function add_stylemenu( $buttons ) {
 	return $buttons;
 }
 add_filter( 'mce_buttons_2', 'add_stylemenu' );
+
+// エディタースタイルシート
+add_editor_style( get_template_directory_uri() . '/editor-style.css?ver=' . date('U') );
+add_editor_style( '//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' );
