@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+/* 基本 */
+.mceContentBody {
+    max-width: 747px;
+    font-family: 'メイリオ', 'Hiraginogo Kaku Gothic Pro', sans-serif;
+    line-height: 1.5;
+}
+
+/* 記事 */
+p {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+@media (max-width: 599px) {
+    p {
+        font-size: 14px;
+    }
+}
+/* 小見出し */
+h2 {
+    position: relative;
+    margin-top: 40px;
+    padding-left: 32px;
+    padding-bottom: 5px;
+    border-bottom: solid 2px #00a0e9;
+    font-size: 24px;
+    clear: both;
+}
+h2:before {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    content: '\f14a';
+    color: #00a0e9;
+    font-family: 'FontAwesome';
+    font-size: 28px;
+    line-height: 1;
+}
+h3 {
+    margin-top: 25px;
+    padding-left: 10px;
+    border-left: solid 10px #a5e2fe;
+    font-size: 18px;
+    clear: both;
+}
+@media (max-width: 599px) {
+    h2 {
+        padding-left: 21px;
+        font-size: 18px;
+    }
+    h2:before {
+        font-size: 20px;
+    }
+    h3 {
+        padding-left: 6px;
+        font-size: 15px;
+    }
+}
+/* 補足情報 */
+.point {
+	position: relative;
+	margin: 40px 0 30px;
+	padding: 25px 20px 20px;
+	border-radius: 10px;
+	background: #cfedb7;
+	font-size: 14px;
+	clear: both;
+}
+.point:before {
+	position: absolute;
+	left: 15px;
+	top: -15px;
+	content: '\f0eb';
+	z-index: 2;
+	width: 32px;
+	height: 32px;
+	padding-top: 3px;
+	border-radius: 16px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background: #5ab80e;
+	color: #fff;
+	font-family: 1;
+	text-align: center;
+}
+.point:after{
+	position: absolute;
+	left: 32px;
+	top: -8px;
+	z-index: 1;
+	content: 'POINT';
+	padding: 3px 10px 3px 20px;
+	border-radius: 5px;
+	background: #5ab80e;
+	color: #fff;
+	font-family: Verdana, Helvetica, sans-serif;
+	line-height: 1;
+}
+
+/* 注意書き */
+.attention {
+    position: relative;
+    margin: 40px 0 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #ffefef;
+    font-size: 14px;
+    clear: both;
+}
+.attention:before {
+    position: absolute;
+    left: 20px;
+    top: -15px;
+    content: '\f071';
+    background: #fff;
+    color: #f00;
+    font-family: 'FontAwesome';
+    font-size: 26px;
+    line-height: 1;
+}
+
+/* ハイライト */
+.highlight {
+    background: #ff0;
+    padding: 0 3px;
+}
+/* 強調 */
+.power {
+    position: relative;
+    display: inline-block;
+}
+.power:after {
+    position: absolute;
+    width: 105%;
+    content: "";
+    height: 30%;
+    background: rgba(255,0,0,0.6);
+    left: 0;
+    bottom: 4px;
+    z-index: -1;
+}
+/*----------- 画像 ----------*/
+/* 編集画面の標準設定解除 */
+.alignleft, .alignright {float: none}
+.wp-caption {
+    float: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+/* 画像のキャプション */
+.wp-caption-dd {
+    margin: 0;
+    color: #666;
+    font-size: 10px;
+    text-align: center;
+}
+.wp-caption-dd a {
+    color: #666;
+}
+/* 画像の配置 */
+.aligncenter {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (max-width: 599px) {
+    .alignleft, .alignright {
+        display: block;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media (min-width: 600px) {
+    .alignleft {
+        float: left;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        margin-right: 30px;
+    }
+    .alignright {
+        float: right;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        margin-left: 30px;
+    }
+}
+/* IE用の設定 */
+a img {
+    border: none;
+}
+/* 大きい画像用の設定 */
+img, .wp-caption {
+    max-width: 100%;
+    height: auto;
+}
+iframe {
+    max-width: 100%;
+}
+
+/* youtubeのビデオ */
+.ytvideo {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.ytvideo iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/* ビデオ */
+.wp-video {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
