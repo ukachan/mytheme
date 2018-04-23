@@ -6,19 +6,25 @@
         the_post(); ?>
         <article <?php post_class( 'gaiyou' ); ?>>
         <a href="<?php the_permalink(); ?>">
-        <?php if( has_post_thumbnail() ): ?>
-        <?php $postthumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' ); ?>
-            <img src="<?php echo $postthumb[0]; ?>" alt="">
-        <?php else: ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/picnic.jpg" alt="">
-        <?php endif; ?>
-        <h1><?php the_title(); ?></h1>
-        <?php the_excerpt(); ?>
+
+        <img src="<?php echo mythumb( 'medium' ); ?>" alt="">
+
+        <div class="text">
+            <h1><?php the_title(); ?></h1>
+
+            <div class="kiji-date">
+            <i class="fa fa-pencil"></i>
+
+            <time datetime="<?php echo get_the_date( 'Y-m-d' ); ?>">
+            投稿：<?php echo get_the_date( 'Y年m月d日' ); ?>
+            </time>
+            </div>
+            <?php the_excerpt(); ?>
+        </div>
         </a>
         </article>
         <?php endwhile; endif; ?>
     </div>
-
     <div class="sub">
     <?php get_sidebar(); ?>
     </div>

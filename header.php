@@ -25,12 +25,7 @@
                 <meta propaty="og:url" content="<?php the_permalink(); ?>">
                 <meta propaty="og:description" content="<?php echo wp_trim_words( $post->post_content, 100, '･･･' ); ?>">
 
-                <?php if( has_post_thumbnail() ): ?>
-                    <?php $postthumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' ); ?>
-                    <meta propaty="og:image" content="<?php echo $postthumb[0]; ?>">
-                <?php else: ?>
-                    <meta propaty="og:image" content="<?php echo get_template_directory_uri(); ?>">
-                <?php endif; ?>
+                <meta propaty="og:image" content="<?php echo mythumb( 'large' ); ?>">
             <?php endif; ?>
 		<?php endif; // 記事の個別ページ用のメタデータ[ここまで] ?>
 		<meta propaty="og:site_name" content="<?php bloginfo( 'name' ); ?>">
