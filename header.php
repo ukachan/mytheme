@@ -24,10 +24,10 @@
                 <meta propaty="og:title" content="<?php the_title(); ?>">
                 <meta propaty="og:url" content="<?php the_permalink(); ?>">
                 <meta propaty="og:description" content="<?php echo wp_trim_words( $post->post_content, 100, '･･･' ); ?>">
-
                 <meta propaty="og:image" content="<?php echo mythumb( 'large' ); ?>">
             <?php endif; ?>
         <?php endif; // 記事の個別ページ用のメタデータ[ここまで] ?>
+
         <?php if( is_home() ): // トップページ用のメタデータ ?>
         <meta name="discription" content="<?php bloginfo( 'description' ); ?>">
 
@@ -41,12 +41,35 @@
         <meta propaty="og:title" content="<?php bloginfo( 'name' ); ?>">
         <meta propaty="og:url" content="<?php home_url( '/' ); ?>">
         <meta propaty="og:description" content="<?php echo get_template_directory_uri(); ?>/picnic-top.jpg">
-        <?php endif; // トップページ用のメタデータカ[ここまで] ?>
+        <?php endif; // トップページ用のメタデータ[ここまで] ?>
+
+        <?php if( is_category() || is_tag() ): // カテゴリーページ用のメタデータ ?>
+        <?php if( is_category() ) {
+            $termid = $cat;
+            $taxname = 'category';
+        } elseif( is_tag() ) {
+            $termid = $tag_id;
+            $taxname = 'post_tag';
+        } ?>
+        <meta name="description" content="<?php single_term_title(); ?>に関する記事の一覧です。">
+        <?php $childcats = get_categories( array( 'child_of' => $termid) );
+        $kwds = array();
+        $kwds[] = single_term_title('', false);
+        foreach($childcats as $childcat) {
+            $kwds[] = $childcat->name;
+        } ?>
+        <meta name="keywords" content="<?php echo implode( ',', $kwds ); ?>">
+        <meta propaty="og:type" content="website">
+        <meta propaty="og:title" content="<?php single_term_title(); ?>に関する記事｜<?php bloginfo( 'name' ); ?>">
+        <meta propaty="og:url" content="<?php echo get_term_link( $termid, $taxname ); ?>">
+        <meta propaty="og:description" content="<?php single_term_title(); ?>に関する記事の一覧です。">
+        <meta propaty="og:image" content="<?php echo get_template_directory_uri(); ?>/picnic-top.jpg">
+        <?php endif; // カテゴリー・タグページ用のメタデータ[ここまで] ?>
+
         <meta propaty="og:locale" conten="ja_JP">
         <meta name="twitter:site" content="@ukkari_ukachan">
         <meta name="twitter:card" content="summary_large_image">
         <meta propaty="og:site_name" content="<?php bloginfo( 'name' ); ?>">
-
 
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
