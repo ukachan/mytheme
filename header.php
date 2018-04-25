@@ -11,14 +11,14 @@
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
         <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>?ver=<?php echo date('U'); ?>">
 
-		<?php if( is_single() || is_page() ): // 記事の個別ページ用のメタデータ ?>
-			<meta name="description" content="<?php echo wp_trim_words( $post->post_content, 100, '･･･' ); ?>">
-			<?php if( has_tag() ): ?>
-				<?php $tags = get_the_tags();
-				$kwds = array();
-				foreach($tags as $tag) {
-					$kwds[] = $tag->name;
-				} ?>
+        <?php if( is_single() || is_page() ): // 記事の個別ページ用のメタデータ ?>
+            <meta name="description" content="<?php echo wp_trim_words( $post->post_content, 100, '･･･' ); ?>">
+            <?php if( has_tag() ): ?>
+                <?php $tags = get_the_tags();
+                $kwds = array();
+                foreach($tags as $tag) {
+                    $kwds[] = $tag->name;
+                } ?>
                 <meta name="keywords" content="<?php echo implode( ',', $kwds ); ?>">
                 <meta propaty="og:type" content="article">
                 <meta propaty="og:title" content="<?php the_title(); ?>">
@@ -27,12 +27,26 @@
 
                 <meta propaty="og:image" content="<?php echo mythumb( 'large' ); ?>">
             <?php endif; ?>
-		<?php endif; // 記事の個別ページ用のメタデータ[ここまで] ?>
-		<meta propaty="og:site_name" content="<?php bloginfo( 'name' ); ?>">
-		<meta propaty="og:locale" conten="ja_JP">
+        <?php endif; // 記事の個別ページ用のメタデータ[ここまで] ?>
+        <?php if( is_home() ): // トップページ用のメタデータ ?>
+        <meta name="discription" content="<?php bloginfo( 'description' ); ?>">
 
-		<meta name="twitter:site" content="@ukkari_ukachan">
-		<meta name="twitter:card" content="summary_large_image">
+        <?php $allcats = get_categories();
+        $kwds = array();
+        foreach($allcats as $allcat) {
+            $kwds[] = $allcat->name;
+        } ?>
+        <meta name="keywords" content="<?php echo implode( ',', $kwds ); ?>">
+        <meta propaty="og:type" content="website">
+        <meta propaty="og:title" content="<?php bloginfo( 'name' ); ?>">
+        <meta propaty="og:url" content="<?php home_url( '/' ); ?>">
+        <meta propaty="og:description" content="<?php echo get_template_directory_uri(); ?>/picnic-top.jpg">
+        <?php endif; // トップページ用のメタデータカ[ここまで] ?>
+        <meta propaty="og:locale" conten="ja_JP">
+        <meta name="twitter:site" content="@ukkari_ukachan">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta propaty="og:site_name" content="<?php bloginfo( 'name' ); ?>">
+
 
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
