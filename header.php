@@ -85,5 +85,16 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/picnic.png"
                 alt="<?php bloginfo( 'name' ); ?>" width="112" height="25"></a></h1>
             </div>
+            <div class="sitenav">
+            <button type="button" id="navbtn">
+            <i class="fa fa-bars"></i><span>MENU</span>
+            </button>
+            <?php wp_nav_menu( array (
+                'theme_location' => 'sitenav',
+                'container' => 'nav',
+                'container_class' => 'mainmenu',
+                'container_id' => 'mainmenu'
+            ) ); ?>
+            </div>
         </div>
     </header>

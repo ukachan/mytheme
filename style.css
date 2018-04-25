@@ -573,7 +573,34 @@ blockquote:after {
 .mymenu li a:hover {
     background: #eee;
 }
-
+/* サムネイル画像をつけたメニューのデザイン */
+.mymenu-thumb li a {
+    padding: 5px 0;
+    border-bottom: dotted 1px #ddd;
+    color: #28b;
+}
+.mymenu-thumb li a:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.mymenu-thumb li .thumb {
+    float: left;
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.mymenu-thumb li .text {
+    float: none;
+    width: auto;
+    margin-left: 75px;
+}
+.mymenu-thumb li span {
+    display: block;
+    color: #666;
+    font-size: 12px;
+}
 /*----------- 画像 ----------*/
 /* 画像のキャプション */
 .wp-caption-text {
@@ -697,5 +724,89 @@ iframe {
     }
     .kiji p {
         font-size: 14px;
+    }
+}
+/* ナビゲーションメニュー */
+#mainmenu {
+    display: none;
+}
+.mainmenu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.mainmenu li a {
+    display: block;
+    padding: 10px 5px;
+    color: #000;
+    font-size: 14px;
+    text-decoration: none;
+}
+.mainmenu li a:hover {
+    background: #eee;
+}
+/* トグルボタン */
+.header-inner {position: relative}
+#navbtn {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    padding: 6px 12px;
+    border: solid 1px #aaa;
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+}
+#navbtn:hover {
+    background: #ddd;
+}
+#navbtn:focus {
+    outline: none;
+}
+#navbtn i {
+    color: #888;
+    font-size: 18px;
+}
+#navbtn span {
+    display: inline-block;
+    text-indent: -9999px;
+}
+@media (min-width: 768px) {
+    /* 市跡名とナビゲーションメニューを横に並べる設定 */
+    .header-inner:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .site {
+        float: left;
+        width: auto;
+    }
+    .sitenav {
+        float: right;
+        width: auto;
+    }
+    /* ナビゲーションメニューのリンクを横に並べる設定 */
+    #mainmenu {
+        display: block !important;
+    }
+    .mainmenu {
+        margin-top: 10px;
+    }
+    .mainmenu ul:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .mainmenu li {
+        float: left;
+        width: auto;
+    }
+    .mainmenu li a {
+        padding: 10px 15px;
+    }
+    /* トグルボタン */
+    #navbtn {
+        display: none;
     }
 }

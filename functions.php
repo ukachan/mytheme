@@ -105,3 +105,11 @@ function mythumb( $size ) {
 	}
 	return $url;
 }
+// カスタムメニュー
+register_nav_menu( 'sitenav', ' サイト・ナビゲーション ');
+
+// トグルボタン
+function navbtn_scripts() {
+	wp_enqueue_script( 'navbtn-script', get_template_directory_uri() . '/navbtn.js', array('jquery') );
+}
+add_action( 'wp_enqueue_scripts', 'navbtn_scripts' );
