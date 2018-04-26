@@ -23,7 +23,7 @@
     <h1><?php the_title(); ?></h1>
     <div class="kiji-tag">
     <?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>
-	</div>
+    </div>
 
     <div class="kiji-date">
     <i class="fas fa-edit"></i>
@@ -47,33 +47,33 @@
     </div>
     <?php endif; ?>
 
-	<div class="kiji-body">
+    <div class="kiji-body">
     <?php the_content(); ?>
-	</div> 
+    </div> 
     <?php wp_link_pages( array(
         'before' => '<div class="pagination"><ul><li>',
         'separator' => '</li><li>',
         'after' => '</li></ul></div>',
         'pagelink' => '<span>%</span>'
     ) ); ?>
-	<div class="share">
-		<ul>
-			<li><a href="http://twitter.com/intent/tweet?text=<?php echo urlencode( get_the_title() . ' - '. get_bloginfo( 'name' ) ); ?>&amp;url=<?php echo urlencode( get_permalink() ); ?>&amp;via=ebisucom" onclick="window.open(this.href, 'SNS', 'width=500, height=300, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="share-tw">
-				<i class="fa fa-twitter"></i>
-				<span>Twitter</span> でシェア
-			</a></li>
-			<li><a href="http://www.facebook.com/share.php?u=<?php echo urlencode( get_permalink() ); ?>" onclick="window.open(this.href, 'SNS', 'width=500, height=500, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="share-fb">
-				<i class="fa fa-facebook"></i>
-				<span>Facebook</span> でシェア
-			</a></li>
-			<li><a href="https://plus.google.com/share?url=<?php echo urlencode( get_permalink() ); ?>" onclick="window.open(this.href, 'SNS', 'window=500, height=500, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="share-gp">
-				<i class="fa fa-google-plus"></i>
-				<span>Google+</span> でシェア
-			</a></li>
-		</ul>
-	</div>
+    <div class="share">
+        <ul>
+            <li><a href="http://twitter.com/intent/tweet?text=<?php echo urlencode( get_the_title() . ' - '. get_bloginfo( 'name' ) ); ?>&amp;url=<?php echo urlencode( get_permalink() ); ?>&amp;via=ebisucom" onclick="window.open(this.href, 'SNS', 'width=500, height=300, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="share-tw">
+    <i class="fa fa-twitter"></i>
+    <span>Twitter</span> でシェア
+            </a></li>
+            <li><a href="http://www.facebook.com/share.php?u=<?php echo urlencode( get_permalink() ); ?>" onclick="window.open(this.href, 'SNS', 'width=500, height=500, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="share-fb">
+    <i class="fa fa-facebook"></i>
+    <span>Facebook</span> でシェア
+            </a></li>
+            <li><a href="https://plus.google.com/share?url=<?php echo urlencode( get_permalink() ); ?>" onclick="window.open(this.href, 'SNS', 'window=500, height=500, menubar=no, toolbar=no, scrollbars=yes'); return false;" class="share-gp">
+    <i class="fa fa-google-plus"></i>
+    <span>Google+</span> でシェア
+            </a></li>
+        </ul>
+    </div>
 
-	</article>
+    </article>
     <?php endwhile; endif; ?>
     </div>
 
@@ -83,3 +83,10 @@
 </div>
 
 <?php get_footer(); ?>
+
+<?php // アクセス数の記録
+$count_key = 'postviews';
+$count = get_post_meta($post->ID, $count_key, true);
+$count++;
+update_post_meta($post->ID, $count_key, $count);
+?>
