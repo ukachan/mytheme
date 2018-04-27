@@ -20,7 +20,7 @@
 </div>
 <div class="container">
     <div class="contents">
-        <h1><?php single_term_title(); ?>に関する記事</h1>
+        <h1>『<?php single_term_title(); ?>』に関する記事</h1>
         <?php
         if(have_posts()): while(have_posts()):
         the_post(); ?>

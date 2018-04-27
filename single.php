@@ -72,16 +72,22 @@
             </a></li>
         </ul>
     </div>
+    <?php if( has_category() ) {
+        $cats = get_the_category();
+        $catkwds = array();
+        foreach($cats as $cat) {
+            $catkwds[] = $cat->term_id;
+        }
+    } ?>
     <?php
     $myposts = get_posts( array(
         'post_type' => 'post',
-        'posts_per_page' => '5',
+        'posts_per_page' => '4',
+        'post__not_in' => array( $post->ID ),
+        'category__in' => $catkwds,
+        'orderby' => 'rand'
     ) );
 
-    $myrank = get_posts( array(
-        'post_type' => 'post',
-        'posts_per_page' => '4',
-    ) );
     if( $myposts ): ?>
     <aside class="mymenu mymenu-thumb mymenu-related">
     <h2>関連記事</h2>

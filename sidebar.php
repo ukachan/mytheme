@@ -30,7 +30,7 @@ $myposts = get_posts( array(
 
 $myrank = get_posts( array(
     'post_type' => 'post',
-    'posts_per_page' => '6',
+    'posts_per_page' => '3',
     'meta_key' => 'postviews',
     'orderby' => 'meta_value_num'
 ) );
@@ -79,3 +79,5 @@ endif; ?>
 </aside>
 <?php wp_reset_postdata();
 endif; ?>
+
+<?php dynamic_sidebar( 'submenu' ); ?>
