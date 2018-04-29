@@ -944,3 +944,18 @@ iframe {
 #text-2 {
     list-style: none;
 }
+
+/*---------- 固定ページ ----------*/
+/* コンテンツメニュー */
+.mymenu-page {border: solid 2px #ddd}
+.mymenu-page h2 {
+    margin: 0;
+    padding: 10px;
+}
+.mymenu-page li a {
+    padding: 20px 10px;
+    border-bottom: solid 1px #ddd;
+}
+.mymenu-page li:last-child a {
+    border: none;
+}

@@ -108,6 +108,7 @@ function mythumb( $size ) {
 // カスタムメニュー
 register_nav_menu( 'sitenav', ' サイト・ナビゲーション ');
 register_nav_menu( 'pickupnav', 'おすすめ記事' );
+register_nav_menu( 'pagenav', 'ページナビゲーション' );
 
 // トグルボタン
 function navbtn_scripts() {
