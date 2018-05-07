@@ -959,3 +959,49 @@ iframe {
 .mymenu-page li:last-child a {
     border: none;
 }
+
+/*---------- トップページ ----------*/
+.mymenu-top li a {
+    position: relative;
+    margin-bottom: 10px;
+    padding: 0;
+}
+.mymenu-top li a:hover {
+    opacity: .8;
+}
+.mymenu-top li .thumb {
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.mymenu-top li h2 {
+    margin: 10px 0 5px;
+    border: none;
+    font-size: 14px;
+}
+.mymenu-top li p {
+    margin: 0;
+    font-size: 14px;
+}
+@media (min-width: 600px) {
+    .mymenu-top ul:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .mymenu-top li {
+        float: left;
+        width: 50%;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .mymenu-top li:nth-child(odd) {
+        clear: both;
+        padding-right: 15px;
+    }
+    .mymenu-top li:nth-child(even) {
+        padding-left: 15px;
+    }
+}
