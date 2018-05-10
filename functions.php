@@ -158,3 +158,10 @@ register_sidebar( array(
 
 // 検索フォーム
 add_theme_support( 'html5', array('search-form') );
+
+// ヘッダー画像
+add_theme_support( 'custom-header', array(
+	'width' => 1000,
+	'height' => 300,
+	'header-text' => false
+) );
