@@ -7,6 +7,7 @@
             <?php bloginfo( 'name' ); ?>
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
         <!-- <link rel="stylesheet" href="//maxcdn.boostrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
         <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>?ver=<?php echo date('U'); ?>">
